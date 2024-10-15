@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+/* google fonts import */
+
+:root {     /* запомненные переменные */
+    --primary-color-text: #9E9A9A;
+    --primary-color-headlines: #A3462F;
+    --primary-color-buttons: #F4FC95;
+    --primary-color-background: #fcf7f7;;
+    --primary-color-text-dark: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0; /* от контента до края контейнера */
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif; /* у всего body шрифт Roboto, если не получится, то sans-serif */
+}
+
+.container {
+    width: 100%; /* контейнер не зависимо от ширины страницы занимает 100%   */
+    color: var(--primary-color-text);
+    background-color: var(--primary-color-background);
+}
+
+.menu {
+    display: grid; /* меню - решетка */
+    width: 100%;
+    grid-template-columns: 1fr 1fr; /* 2 столбца */
+    grid-template-rows: 1fr; /* можно не уточнять */
+}
+
+.page-menu {
+    justify-self: end; /* выравнивание по концу ячейки */
+}
+
+.hamburger { /* blok элемент */
+    display: flex; /* разбросать линии, flex тоже читает margin */
+    flex-direction: column; /* направление */
+    width: 65px;
+    height: 58px;
+    justify-content: space-between; /* рассредоточить */
+    align-items: center;
+    border: 3px solid var(--primary-color-headlines); /* толщина рамочки */
+    border-radius: 10px;
+    background-color: var(--primary-color-buttons);
+    margin: 15px; /* промежуток */
+}
+
+.line {
+    width: 39px;
+    height: 5px;
+    background-color: var(--primary-color-headlines);
+    border-radius: 10px;
+    margin: 7px 0; /* промежуток */
+}
+
+.logo-span { /* позволяет включить margin */
+    display: inline-block;
+    margin: 25px;
+    font-weight: 900;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    font-weight: bold; /* делает текст жирным */
+    color: var(--primary-color-headlines);
+}
+
+.profile { /* браузер обрабатывает картинку как текст */
+    text-align: center; /* выравнивание картинки */
+}
+
+.profile-image img { /* тег img - обращение к картинке */
+    display: inline-block; /* позволяет включить margin */
+    width: 171px; /* размеры из Фигмы */
+    height: 171px;
+    border-radius: 50%; /* 50% делает круг */
+    object-fit: cover; /* выравнивание по центру */
+    margin: 25px; /* отталкивать от себя все на 25px */
+}
+
+hr { /* линия для телефона */
+    width: 171px;
+    height: 12px;
+    background-color: var(--primary-color-headlines);
+    border-radius: 7px; /* закругление */
+    border: none; /* линия без рамки */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* добавляет тень */
+}
+
+.headline h3 { /* текст My works */
+    font-family: "Russo One", sans-serif;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* добавляет тень для текста */
+    color: var(--primary-color-headlines);
+    margin: 0;
+}
+
+.frame {
+    width: 100%;
+    text-align: center;
+}
+
+.frame img { /* все изображения внутри себя */
+    display: inline-block;
+    width: 296px;
+    height: 165px;
+    object-fit: cover; /* отцентруй */
+    margin: 22px;
+}
+
+.my-clients {
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+    margin-top: 24px; /* отступ сверху */
+}
+
+.card h4 { /* заголовок в классе Card */
+    font-family: "Russo One", sans-serif;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.card span {
+    display: inline-block; /* для того чтоб добавить внутренний отступ */
+    color: var(--primary-color-text-dark);
+    background-color: var(--primary-color-buttons);
+    opacity: 0.5; /* прозрачность */
+    padding: 4px; /* внутренний отступ  */
+    margin-bottom: 5px; /* оттолкнуть вниз элементы */
+}
+
+.card p { /* все параграфы внутри Card */
+    margin: 15px; /* отступ со всех сторон */
+}
+
+.contact { /* кнопка */
+    width: 100%;
+    text-align: center;
+    padding-top: 32px;
+}
+
+.contact button {
+    border: none;
+    text-transform: uppercase; /* весь текст внутри кнопки большими буквами*/
+    font-size: 24px;
+    font-weight: bold; /* делает текст жирным */
+    border-radius: 10px;
+    background-color: var(--primary-color-buttons);
+    padding: 15px 51px; /* 15-сверху,снизу и 51-слева,справа */
+    color: var(--primary-color-headlines); /* цвет текста кнопки */
+    margin: 32px;
+}
+
+.social-media {
+    width: 100%;
+    text-align: center;
+    padding-top: 48px;
+}
+
+.social-media-icons ul {
+    list-style: none; /* убрать точки */
+    padding: 0; /* отступ слева */
+}
+
+.social-media-icons ul li { /* все элементы из списка ul которые пренадлежат классу social-media-icons  */
+    display: inline-block; /* отоброжать в линию */
+    margin: 19px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 10px;
+}
+
+/* отключаем, то что появилось в других размерах*/
+.menu-list {
+    display: none; /* не отоброжать лист меню */
+}
+
+.profile-learn-more {
+    display: none;
+}
+
+.my-works-intro {
+    display: none;
+}
+
+.gallery {
+    display: none;
+}
+
+.contact-form {
+    display: none;
+}
+
+.contact-details {
+    display: none; /* номер телефона и почта удаляется */
+}
+
+#contact-me-headline { 
+    display: none; /* Contact me удаляется для экрана телефона */
+}
+
+.contact-intro {
+    display: none;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) { /* медиа-запрос позволяет  реагировать на ширину экрана*/
+    .hamburger {
+        display: none; /* удаляем его */
+    }
+
+    .menu {
+        grid-template-columns: 1fr 2fr; /* условно страница поделена на 3 части */
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: 24px;
+    }
+
+    .menu-list {
+        display: block; /* возвращает лист меню */
+    }
+
+    .menu-list ul { /* список внутри класса */
+        list-style: none; /* убрать точки */
+        padding: 0; /* отступ слева */
+        text-transform: uppercase; /* все большими буквами */
+        font-size: 18px;
+        font-weight: 700; /* толщина линий, которыми обрисовываются буквы*/
+        color: var(--primary-color-text-dark);
+    }
+
+    .menu-list ul li {
+        display: inline-block; /* отобрази в линию */
+        margin-right: 8px; /* отталкивает от правого края */
+    }
+
+    .menu-list ul li a {
+        display: inline-block; /* что бы оперировать padding и margin  */
+        text-decoration: none; /* подчеркивание снизу */
+        color: var(--primary-color-text-dark); 
+        transition: transform 0.5s ease-in-out, text-shadow 0.5s ease-in-out; /* скорость анимации */
+    }
+
+    .menu-list ul li a:hover { 
+        transform: scale(1.3);
+        text-shadow: 6px 4px 4px #77777769; /* x y плотность */
+    }
+
+    .profile {
+        display: grid; /* что бы разделить на ячейки */
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .profile-image img {
+        width: 264px; /* другой размер для планшета */
+        height: 264px;
+    }
+
+    .profile-learn-more {
+        display: grid;
+        align-items: center; /* овыровнять по оси Y */
+        justify-content: start; /* выровнять по левому боку */
+    }
+
+    .profile-details span { /* clean and elegant websites*/
+        display: block;
+        width: 284px;
+        font-size: 36px;
+        text-align: start;
+        margin-left: 24px;
+        font-weight: 300;   
+    }
+
+    .profile-details button {
+        display: block;
+        background-color: var(--primary-color-buttons);
+        color: var(--primary-color-headlines);
+        font-size: 24px;
+        width: 264px;
+        border: none;
+        padding: 14px 20px; /* расстояние внутри кнопки до края*/
+        margin-left: 24px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+
+
+    .my-works .frame { /* класс frame внутри класса my-works*/
+        display: none; /* скрывается одна фотография*/
+    }
+
+    hr { /* линия для планшета*/
+        margin-left: 32px; /* сместили влево*/
+    }
+
+    .headline h3 { /* текст My works, My clients*/
+        padding-left: 32px; /* отступ от левого края*/
+        text-align: start; /* выравнивание по левому краю*/
+    }
+
+    .gallery { /* галлерея с фото для планшета*/
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 10px; /* пространство между элементами*/
+        margin-top: 32px; /* отступ сверху*/
+    }
+
+    .gallery-item { /* обертка для каждого изображения*/
+        text-align: center; /* все по центру*/
+    }
+
+    .gallery img { /* фото в галлерее*/
+        width: 377px; 
+        height: 210px;
+        object-fit: cover; 
+    }
+
+    .my-clients {
+        margin-top: 48px; /* оттолкнуться сверху*/
+    }
+
+    .my-clients p { /* параграф в карточке*/
+        width: 345px;
+        margin: 15px auto;
+    }
+
+    .card {
+        margin-top: 48px;
+    }
+
+    .btn-contact { /* убрать кнопку Contact me*/
+        display: none;
+    }
+
+    #contact-me-headline {
+        display: block; /* возвращает */
+    }
+
+    .contact-intro {
+        display: block; /* возвращает */
+        width: 100%;
+    }
+
+    .contact-intro p {
+        width: 443px;
+        text-align: start;
+        margin-left: 32px;
+    }
+
+    .contact-form {
+        display: block;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .contact-form form {
+        text-align: start;
+        box-sizing: border-box;
+        padding: 32px;
+    }
+
+    input, textarea { /* окошечки для ввода текста*/
+        width: 100%;
+        background-color: var(--primary-color-buttons);
+    }
+
+    input {
+        height: 34px; /* высота ячейки*/
+    }
+
+    .contact-form button {
+        text-transform: none; /* не большие буквы*/
+        margin-left: 0; /* убрать отступ слева*/
+    }
+
+    .contact-details {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-details ul { /* список телефон и почта*/
+        list-style: none;
+        padding: 0;
+        text-align: start;
+        margin-left: 32px;
+        font-size: 20px;
+        color: var(--primary-color-headlines);
+    }
+
+    .social-media-icons ul { /* выравнивание социал медия по левому краю*/
+        text-align: start;
+        margin-left: 28px;
+    }
+
+    .social-media-icons ul li { 
+        margin: 0px;
+    }
+}
+
+@media (min-width: 1025px) { /* для компьютера*/
+    .hamburger {
+        display: none; /* удаляем */
+    }
+
+    .menu {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    }
+
+    .menu-list {
+        display: block;
+        box-sizing: border-box;
+        padding: 16px;
+    }
+
+    .menu-list ul {
+        list-style: none;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--primary-color-text-dark);
+    }
+
+    .menu-list ul li {
+        display: inline-block;
+        margin-right: 14px;
+    }
+
+    .menu-list ul li a {
+        display: inline-block; /* что бы оперировать padding и margin  */
+        text-decoration: none; /* подчеркивание снизу */
+        color: var(--primary-color-text-dark); 
+        transition: transform 0.5s ease-in-out, text-shadow 0.5s ease-in-out; /* скорость анимации */
+    }
+
+    .menu-list ul li a:hover { 
+        transform: scale(1.5);
+        text-shadow: 6px 4px 4px #77777769; /* x y плотность */
+    }
+
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .profile-image img {
+        width: 600px; /* для компьютера*/
+        height: 600px;
+    }
+
+    .profile-learn-more { /* Clean and and elegant websites*/
+        display: grid;
+        align-items: end;
+        justify-content: center; /* выравнять по центру кнопку и текст*/
+    }
+
+    .profile-details {
+        margin-bottom: 128px; /* оттолкнуться снизу*/
+    }
+
+    .profile-details span {
+        display: block;
+        width: 284px;
+        font-size: 36px;
+        text-align: start;
+        font-weight: 300;
+    }
+
+    .profile-details button {
+        display: block;
+        background-color: var(--primary-color-buttons);
+        color: var(--primary-color-headlines);
+        font-size: 32px;
+        width: 316px;
+        height: 94px;
+        border: none;
+        padding: 14px 20px;
+        margin-top: 10px;
+        border-radius: 10px;
+        transition: box-shadow 0.5s ease-in-out;
+    }
+
+    .profile-details button:hover {
+        box-shadow: 10px 10px 10px var(--primary-color-headlines);
+    }
+
+    hr { /* линии для компьютера*/
+        width: 260px;
+        height: 15px;
+        margin-left: 32px;
+    }
+    
+    .headline h3 {
+        font-size: 50px;
+        text-align: start;
+        margin-left: 32px;
+    }
+
+    .frame {
+        display: none;
+    }
+
+    .btn-contact {
+        display: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        margin: 32px auto;
+    }
+
+    .gallery-item {
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 453px;
+        height: 305px;
+        object-fit: cover;
+    }
+
+    .gallery-item img {
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.2);
+        box-shadow: 10px 10px 10px #77777787;
+    }
+
+    .my-works-intro p {
+        width: 923px;
+        margin-left: 32px;
+    }
+    
+    .card {
+        display: grid; /* решетка*/
+        grid-template-columns: 1fr 2fr;
+        width: 95%; /* для рамочек*/
+        margin: 48px auto;
+        border: 2px solid #77777749; /* рамочка*/
+        padding: 32px; /* отталкивание от рамок*/
+    }
+
+    .card span {
+        margin-bottom: 5;
+    }
+    
+    .card h4 { /* текст*/
+        font-family: "Russo One", sans-serif;
+        font-size: 24px;
+        margin: 5px;
+    }
+      
+    .card p {
+        margin: 0;
+    }
+
+    .card-image img {  /* картинки внутри класса*/
+        width: 216px;
+        height: 163px;
+    }
+
+    .card-text-content {
+        text-align: start;
+        box-sizing: border-box;
+        padding-right: 64px;
+    }
+
+    .role-description {
+        display: inline-block;
+        margin: 24px 0;
+        margin-right: 16px;
+    }
+
+    .get-in-touch {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .contact-form {
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .contact-form form {
+        text-align: start;
+        box-sizing: border-box;
+        padding: 32px;
+    }
+
+    input, textarea {
+        width: 100%;
+        background-color: var(--primary-color-buttons);
+        border: none;
+        outline: none;
+    }
+
+    input:focus, textarea:focus {
+        box-sizing: border-box;
+        border-top: 2px solid var(--primary-color-headlines); /* линия сверху */
+        border-left: 2px solid var(--primary-color-headlines); /* линия слева */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* добавляет тень */
+    }
+
+    input {
+        height: 34px;
+        margin-bottom: 32px;
+    }
+
+    .contact-form button {
+        background-color: var(--primary-color-buttons);
+        color: var(--primary-color-headlines);
+        text-transform: none;
+        margin-left: 0;
+    }
+
+    .social-media {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-align: start;
+        box-sizing: border-box;
+        padding: 32px;
+    }
+
+    .social-media h3 {
+        font-size: 40px;
+        margin-left: 0;
+    }
+
+    #contact-me-headline {
+        display: block;
+    }
+
+    .contact-intro {
+        display: block;
+        width: 923px;
+        text-align: start;
+        margin-left: 32px;
+    }
+
+    .contact-details {
+        display: block;
+        font-size: 24px;
+        text-align: start;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        box-sizing: border-box;
+        padding: 32px;
+    }
+
+    .contact-details ul {
+        list-style: none; /* удаляются точки списка*/
+        padding: 0;
+    }
+
+    .contact-details ul li {
+        margin-bottom: 24px;
+    }
+
+    .social-media-icons ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .social-media-icons ul li {
+        display: inline-block;
+        margin: 0;
+    }
+    
+}
