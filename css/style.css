@@ -22,6 +22,10 @@ body {
     background-color: var(--primary-color-background);
 }
 
+body {
+    overflow-x: hidden; /* убирает горизонтальный скролл */
+}
+
 .menu {
     display: grid; /* меню - решетка */
     width: 100%;
@@ -52,6 +56,39 @@ body {
     background-color: var(--primary-color-headlines);
     border-radius: 10px;
     margin: 7px 0; /* промежуток */
+}
+
+.menu-panel { /* меню для телефона */
+    position: absolute; /* левый верхний угол */
+    top: 0; 
+    right: -264px;
+    width: 264px;
+    height: 350px;
+    background-color: var(--primary-color-buttons);
+    font-size: 32px;
+    text-transform: uppercase; /* большие буквы */
+    text-align: center; /* по центру */
+    padding: 16px;
+    box-sizing: border-box;
+    transition: right 1s ease-in-out; /* анимация */
+}
+
+.menu-panel ul {
+    list-style: none; /* убрать точки */
+    padding: 0;
+}
+
+.menu-panel ul li {
+    margin-bottom: 32px; /* междустрочное расстояние */
+}
+
+.menu-panel ul li a {
+    color: var(--primary-color-text-dark);
+    text-decoration: none;  /* убирает подчеркивание */
+}
+
+.menu-panel.active {
+    right: 0;
 }
 
 .logo-span { /* позволяет включить margin */
@@ -220,6 +257,10 @@ footer {
         align-items: center;
         box-sizing: border-box;
         padding-right: 24px;
+    }
+
+    .menu-panel {
+        display: none;
     }
 
     .menu-list {
@@ -413,6 +454,10 @@ footer {
     .menu {
         grid-template-columns: 1fr 2fr;
         align-items: center;
+    }
+
+    .menu-panel {
+        display: none;
     }
 
     .menu-list {
